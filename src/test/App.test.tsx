@@ -9,10 +9,15 @@ render(<Counter />);
 //select the elements you want to interact with
 const counter = screen.getByTestId("counter");
 const incrementBtn = screen.getByTestId("increment");
+const decrementBtn = screen.getByTestId("decrement");
 
-//interact with those elements
+//interact with increment button
 fireEvent.click(incrementBtn);
 
 //assert the expected result
 expect(counter).toHaveTextContent("1");
+
+//interact with decrement button
+fireEvent.click(decrementBtn);
+expect(counter).toHaveTextContent("0");
 });
